@@ -1,27 +1,42 @@
-# eBee
 
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css" integrity="sha384-9tPv11A+glH/on/wEu99NVwDPwkMQESOocs/ZGXPoIiLE8MU/qkqUcZ3zzL+6DuH" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.js" integrity="sha384-U8Vrjwb8fuHMt6ewaCy8uqeUXv4oitYACKdB0VziCerzt011iQ/0TqlSlv8MReCm" crossorigin="anonymous"></script>
-<script>
- function render(tag){
-       var eq = tag.innerHTML;
-       var htmlEq = katex.renderToString(eq,{throwOnError: false});
-       tag.innerHTML = htmlEq;
-     }
-function renderAll(classes){
-       for(var i=0;i<classes.length;i++){
-         var elts = document.getElementsByClassName(classes[i]);
-         for(var j=0; j < elts.length; j++){
-           render(elts[j]);
+<html>
+  <head>
+    <title>Method</title>
+    <link rel="icon" href="https://deepalgo.com/media/deep-algo-favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    ></script>
+    <script>
+     function renderMath(){
+       renderMathInElement(
+         document.body,
+         {
+           throwOnError: false,
+           errorColor: "red",
+           delimiters: [
+             {left: "$$", right: "$$", display: true},
+             {left: "$", right: "$", display: false},
+           ]
          }
-       }
+       );
      }
-</script>
-<body onload="renderAll(['eq'])">
+    </script>
+  </head>
+  
+  <body onload="renderMath()">
+  
+  
+# Hello
 
-<span class='eq'>E=mc^2</span>
+## sub title should be ok 
 
 
-</body>
+    <h1>test</h1> 
+
+
+$$E=mc^2$$
+
+  </body>
+
+</html>
