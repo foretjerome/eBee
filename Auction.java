@@ -3,7 +3,10 @@ package ebee.auction;
 public class AuctionFlow {
     private Date openingTime;
     private Date closingTime;
-    
+    /**
+     * @deepalgo
+     *
+     */
     public void startAuction(Item item) {
         Date currentTime = Date.now();
         if(currentTime < openingTime){

@@ -7,12 +7,15 @@ public abstract class User {
 }
 
 public class eBee  extends User {
-
+    /**
+     * this tag shall raise a warning due to not in a method
+     * @deepalgo
+     */
     private static eBee self;
     private eBee(){
         
     }
-
+    
     public static eBee company(){
         if(self == null){
             self = new eBee();
@@ -20,6 +23,12 @@ public class eBee  extends User {
         return self;
     }
 
+    /**
+     * this tag shall be ok
+     *
+     * @deepalgo 
+     *
+     */
     public Double calculatePercentFee(Double amount){
         if(amount <= 1000){
             return 0;
@@ -61,6 +70,10 @@ public class eBee  extends User {
         //Double lastBuyerBetInTresoCurrency = item.lastBuyerBet / Currency.currencyRate(item.owner.country, country, Date.today());
         
         Double sellerCountryVat = Currency.vatByCountryCode(item.owner.country);
+        /**
+         * this tag shall be ok and doc the amount stack var
+         * @deepalgo
+         */
         Double amount;
         if(sellerCountryVat > 0){
             amount = item.lastBuyerBet / (1 + sellerCountryVat);
@@ -72,6 +85,7 @@ public class eBee  extends User {
         fees = applyPromotion(item.owner, fees);
         
         amount = amount - fees;
+        // @deepalgo shall explain the cash property withing this algo only
         cash += fees;
         return amount;
     }
