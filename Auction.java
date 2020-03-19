@@ -4,6 +4,8 @@ public class AuctionFlow {
     private Date openingTime;
     private Date closingTime;
     /**
+     * this tag shall raise a warning due to void
+     *
      * @deepalgo
      *
      */
